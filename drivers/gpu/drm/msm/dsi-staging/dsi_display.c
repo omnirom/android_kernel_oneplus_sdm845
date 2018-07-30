@@ -1150,6 +1150,7 @@ int dsi_display_set_power(struct drm_connector *connector,
 			aod_mode=0;
 		    printk(KERN_ERR"Turn off AOD MODE aod_mode = %d\n",aod_mode);
 		    dsi_panel_set_aod_mode(display->panel, aod_mode);
+                    rc = dsi_panel_enable(display->panel);
 		} else if ((power_mode == SDE_MODE_DPMS_OFF)
 		        && display->panel->aod_status){
             display->panel->aod_status = 0;
