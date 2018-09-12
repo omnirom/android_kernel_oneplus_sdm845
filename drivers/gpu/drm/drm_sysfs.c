@@ -289,14 +289,14 @@ static ssize_t aod_show(struct device *dev,
 
 	aod_mode = dsi_display_get_aod_mode(connector);
 
-	ret = scnprintf(buf, PAGE_SIZE, "%d\n", aod_mode); 
+	ret = scnprintf(buf, PAGE_SIZE, "%d\n", aod_mode);
 	return ret;
 }
 
 static ssize_t aod_store(struct device *dev,
 	struct device_attribute *attr, const char *buf, size_t count)
 {
-	struct drm_connector *connector = to_drm_connector(dev);
+	//struct drm_connector *connector = to_drm_connector(dev);
 	int ret = 0;
 	int aod_mode = 0;
 
@@ -306,9 +306,9 @@ static ssize_t aod_store(struct device *dev,
 		return ret;
 	}
 
-	ret = dsi_display_set_aod_mode(connector, aod_mode);
-	if (ret)
-		pr_err("set AOD mode(%d) fail\n", aod_mode);
+	//ret = dsi_display_set_aod_mode(connector, aod_mode);
+	//if (ret)
+	//	pr_err("set AOD mode(%d) fail\n", aod_mode);
 
 	return count;
 }
