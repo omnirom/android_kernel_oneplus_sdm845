@@ -98,6 +98,10 @@ endif
 
 export quiet Q KBUILD_VERBOSE
 
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),oneplus6))
+FP_PROXIMITY_ENABLE := true
+endif
+
 # kbuild supports saving output files in a separate directory.
 # To locate output files in a separate directory two syntaxes are supported.
 # In both cases the working directory must be the root of the kernel src.
