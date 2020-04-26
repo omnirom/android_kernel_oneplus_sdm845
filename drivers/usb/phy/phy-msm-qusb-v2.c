@@ -1605,7 +1605,7 @@ skip_pinctrl_config:
 		qusb_phy_enable_usb_oe(&qphy->phy);
 
 //darkobas
-	//qphy->suspended = true;
+	qphy->suspended = true;
 	qusb_phy_create_debugfs(qphy);
 
 	return ret;
